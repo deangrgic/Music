@@ -1,0 +1,125 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/track/{trackId}" : {
+      "get" : {
+        "description" : "",
+        "operationId" : "get-track",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "trackId",
+          "in" : "path",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        }, {
+          "name" : "keyword",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a TrackDetails to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/TrackDetails"
+            }
+          }
+        }
+      }
+    },
+    "/tracks" : {
+      "get" : {
+        "description" : "",
+        "operationId" : "get-tracks",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a Tracks to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Tracks"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Tracks" : {
+      "type" : "object",
+      "required" : [ "TotalTrackCount", "ResultTrackCount" ],
+      "properties" : {
+        "TotalTrackCount" : {
+          "type" : "integer"
+        },
+        "ResultTrackCount" : {
+          "type" : "integer"
+        },
+        "TrackSummaries" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/TrackSummaries",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "TrackSummaries" : {
+      "type" : "object",
+      "required" : [ "Title", "Id", "TrackLink" ],
+      "properties" : {
+        "Id" : {
+          "type" : "string"
+        },
+        "Title" : {
+          "type" : "string"
+        },
+        "TrackLink" : {
+          "type" : "string"
+        }
+      }
+    },
+    "TrackDetails" : {
+      "type" : "object",
+      "required" : [ "Artist", "Format", "AlbumLink", "ArtistLink", "Title", "Album", "Id", "TrackNumber" ],
+      "properties" : {
+        "Id" : {
+          "type" : "string"
+        },
+        "Title" : {
+          "type" : "string"
+        },
+        "TrackNumber" : {
+          "type" : "integer"
+        },
+        "Format" : {
+          "type" : "string"
+        },
+        "Artist" : {
+          "type" : "string"
+        },
+        "ArtistLink" : {
+          "type" : "string"
+        },
+        "Album" : {
+          "type" : "string"
+        },
+        "AlbumLink" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

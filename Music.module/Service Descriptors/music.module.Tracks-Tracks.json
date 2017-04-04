@@ -1,0 +1,66 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Get all tracks",
+    "description" : "Get all tracks"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/tracks" : {
+      "get" : {
+        "description" : "",
+        "operationId" : "get-tracks",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a Tracks to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Tracks"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Tracks" : {
+      "type" : "object",
+      "required" : [ "TotalTrackCount", "ResultTrackCount" ],
+      "properties" : {
+        "TotalTrackCount" : {
+          "type" : "integer"
+        },
+        "ResultTrackCount" : {
+          "type" : "integer"
+        },
+        "TrackSummaries" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/TrackSummaries",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "TrackSummaries" : {
+      "type" : "object",
+      "required" : [ "Title", "Id", "TrackLink" ],
+      "properties" : {
+        "Id" : {
+          "type" : "string"
+        },
+        "Title" : {
+          "type" : "string"
+        },
+        "TrackLink" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "http://192.168.59.103:8888"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/music.module.Tracks-Tracks.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/music.module.Tracks1-Tracks1.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/music.module.Tracks-Tracks1.json",
+            "type": "generated"
+        }
+    ]
+}

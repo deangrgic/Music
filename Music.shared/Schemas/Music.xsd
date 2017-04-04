@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Music" xmlns:tns="http://www.example.org/Music" elementFormDefault="qualified">
+    <complexType name="ImportTrackType">
+    	<sequence>
+    		<element name="Artist" type="string"></element>
+    		<element name="Album" type="string"></element>
+    		<element name="Title" type="string"></element>
+    		<element name="Number" type="int"></element>
+    		<element name="Format" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ImportTrack" type="tns:ImportTrackType"></element>
+
+    <complexType name="TrackSummaryType">
+    	<sequence>
+    		<element name="Id" type="string"></element>
+    		<element name="Title" type="string"></element>
+    		<element name="TrackLink" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="TracksType">
+    	<sequence>
+    		<element name="TotalTrackCount" type="int"></element>
+    		<element name="ResultTrackCount" type="int"></element>
+    		<element name="TrackSummaries" type="tns:TrackSummaryType"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="TrackDetailsType">
+    	<sequence>
+    		<element name="Id" type="string"></element>
+    		<element name="Title" type="string"></element>
+    		<element name="TrackNumber" type="int"></element>
+    		<element name="Format" type="string"></element>
+    		<element name="Artist" type="string"></element>
+    		<element name="ArtistLink" type="string"></element>
+    		<element name="Album" type="string"></element>
+    		<element name="AlbumLink" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Tracks" type="tns:TracksType"></element>
+
+    <element name="TrackSummary" type="tns:TrackSummaryType"></element>
+
+    <element name="TrackDetails" type="tns:TrackDetailsType"></element>
+
+    <complexType name="TrackStoreType">
+    	<sequence>
+    		<element name="TrackDetails" type="tns:TrackDetailsType" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="TrackStore" type="tns:TrackStoreType"></element>
+</schema>

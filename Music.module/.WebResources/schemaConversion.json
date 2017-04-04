@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/Music.module/Service Descriptors/music.module.Tracks-Tracks.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Music"
+    },
+    {
+        "jsonSchemaLocation": "/Music.module/Service Descriptors/music.module.Tracks1-Tracks1.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Music"
+    }
+]}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_16KccBkXEeeKgdFhxbCgXw" targetNamespace="http://tns.tibco.com/bw/composite/Music.module" name="Music.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_veV8oBkkEeeTW4HTiSwO-A" name="tracks" promote="ComponentTracks1/tracks">
+    <sca:interface.wsdl xmi:id="_ved4cBkkEeeTW4HTiSwO-A" interface="http://xmlns.example.com/20170404125205PLT#wsdl.interface(tracks)" scaext:wsdlLocation="../Processes/music/module/Tracks1.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_vel0QBkkEeeTW4HTiSwO-A" name="RestService" path="/tracks" docBasePath="http://localhost:7777/Music.module" docResourcePath="Tracks1" basePath="/" connector="music.module.Tracks" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/music.module.Tracks1-Tracks1.json">
+      <operation xmi:id="_venCYBkkEeeTW4HTiSwO-A" operationName="get" nickname="get-tracks" httpMethod="GET" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_vetwEBkkEeeTW4HTiSwO-A"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_venCYRkkEeeTW4HTiSwO-A" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_WFgEEBkvEeeTW4HTiSwO-A" name="track" promote="ComponentTracks1/track">
+    <sca:interface.wsdl xmi:id="_WFh5QBkvEeeTW4HTiSwO-A" interface="http://xmlns.example.com/20170404125205PLT#wsdl.interface(track)"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_WFjucBkvEeeTW4HTiSwO-A" name="RestService1" path="/track/{trackId}?keyword={keyword}" docBasePath="http://localhost:7777/Music.module" docResourcePath="Tracks1" basePath="/" connector="music.module.Tracks" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/music.module.Tracks1-Tracks1.json">
+      <operation xmi:id="_WFk8kBkvEeeTW4HTiSwO-A" operationName="get" nickname="get-track" httpMethod="GET" responseStyle="element" requestStyle="element">
+        <parameters xmi:id="_5nDRABkvEeeTW4HTiSwO-A">
+          <parameterMapping xmi:id="_5nDRARkvEeeTW4HTiSwO-A" parameterName="keyword" parameterType="Query"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_5nD4EBkvEeeTW4HTiSwO-A">
+        <parameterMapping xmi:id="_5nD4ERkvEeeTW4HTiSwO-A" parameterName="trackId" parameterType="Path" dataType="string" required="true"/>
+      </parameters>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_WFk8kRkvEeeTW4HTiSwO-A" bindingName="RestService1"/>
+  </sca:service>
+  <sca:property xmi:id="_3IDL4BkXEeeKgdFhxbCgXw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3IURoBkXEeeKgdFhxbCgXw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3IaYQBkXEeeKgdFhxbCgXw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3IiUEBkXEeeKgdFhxbCgXw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3IoasBkXEeeKgdFhxbCgXw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3ItTMBkXEeeKgdFhxbCgXw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3I0n8BkXEeeKgdFhxbCgXw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3I5gcBkXEeeKgdFhxbCgXw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3JG70BkXEeeKgdFhxbCgXw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_o3g7IBk7EeeTW4HTiSwO-A" name="/File/location" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_QkEPcBlpEeenz_U3AgWWVA" name="/Http/host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_XTZOMBlpEeenz_U3AgWWVA" name="/Http/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_2kGxUBkXEeeKgdFhxbCgXw" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_2kH_cBkXEeeKgdFhxbCgXw" processName="music.module.Process"/>
+  </sca:component>
+  <sca:component xmi:id="_veOn4BkkEeeTW4HTiSwO-A" name="ComponentTracks1" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_veOn4RkkEeeTW4HTiSwO-A" processName="music.module.Tracks"/>
+    <sca:service xmi:id="_veRrMBkkEeeTW4HTiSwO-A" name="tracks">
+      <sca:interface.wsdl xmi:id="_veS5UBkkEeeTW4HTiSwO-A" interface="http://xmlns.example.com/20170404125205PLT#wsdl.interface(tracks)" scaext:wsdlLocation="../Processes/music/module/Tracks1.bwp"/>
+    </sca:service>
+    <sca:service xmi:id="_WFe18BkvEeeTW4HTiSwO-A" name="track">
+      <sca:interface.wsdl xmi:id="_WFfdABkvEeeTW4HTiSwO-A" interface="http://xmlns.example.com/20170404125205PLT#wsdl.interface(track)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

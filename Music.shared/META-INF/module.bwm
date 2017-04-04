@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmi:id="_RsELMBkaEeeKgdFhxbCgXw" targetNamespace="http://tns.tibco.com/bw/composite/Music.shared" name="Music.shared" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_RwFvkBkaEeeKgdFhxbCgXw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_RwKoEBkaEeeKgdFhxbCgXw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_RwMdQBkaEeeKgdFhxbCgXw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_RwOScBkaEeeKgdFhxbCgXw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_RwPgkBkaEeeKgdFhxbCgXw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_RwQusBkaEeeKgdFhxbCgXw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_RwSj4BkaEeeKgdFhxbCgXw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_RwUZEBkaEeeKgdFhxbCgXw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_RwWOQBkaEeeKgdFhxbCgXw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+</sca:composite>
